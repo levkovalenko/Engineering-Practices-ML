@@ -1,0 +1,40 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Engineering practices in ML"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Cource prblems"
+        contents:
+          - 1.entry.qmd
+          - 2.replication_crisis.qmd
+      - section: "Team work"
+        contents:
+          - 2.project_template.qmd
+          - 3.git_wokflow.qmd
+      - section: "Software development"
+        contents: 
+          - 4.code_styles.qmd
+          - 5.testing.qmd
+      - section: "Documentation"
+        contents:
+          - 6.generate_docs.qmd
+      - section: "Pipelines"
+        contents:
+          - 7.snakemake.qmd
+      - section: "Data versioning"
+        contents:
+          - 9.dvc.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

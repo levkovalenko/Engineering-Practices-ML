@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "epml"
+version = "0.1.0"
+description = "Engineering practices in machine learning"
+authors = ["Kovalenko Lev <levozavr@mail.ru>"]
+
+[tool.poetry.dependencies]
+python = "3.10"
+jupyter = "^1.0.0"
+plotly = "^5.10.0"
+matplotlib = "^3.6.1"
+quarto = "^0.1.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

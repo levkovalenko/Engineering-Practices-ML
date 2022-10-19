@@ -1,0 +1,11 @@
+*
+
+!.gitignore
+!*.qmd
+!*.yml
+!*.css
+!poetry.lock
+!pyproject.toml
+!/images/
+
+/.quarto/
