@@ -7,5 +7,5 @@
 !poetry.lock
 !pyproject.toml
 !/images/
-
-/.quarto/
+!/.github/
+!/.github/workflows/
