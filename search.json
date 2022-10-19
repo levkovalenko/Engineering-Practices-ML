@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Engineering practices in ML",
-    "section": "",
-    "text": "Сайт для курса “Инженерные практики в ML”."
-  },
-  {
     "objectID": "1.entry.html#зачем-этот-курс",
     "href": "1.entry.html#зачем-этот-курс",
     "title": "Engineering practices in ML",
@@ -47,6 +40,13 @@
     "title": "Engineering practices in ML",
     "section": "Домашнее задание",
     "text": "Домашнее задание\n\nВыбрать и опубликовать ML проект на GitHub.\nПеревести все jupyter notebook’и в скрипты (если это уже существующий проект, можете оставить jupyter notebook, но также создайте папку со скриптами).\nЗаполнить информацию о себе в сводной таблице\n\nДля тех, у кого нет своего проекта, советуем ознакомиться со следующими исследованиями, которые вы можете взять в качестве своего проекта, либо же составить свое исследование на их основе:\n\nA Statistical Analysis & ML workflow of Titanic\nTitanic: A complete approach for Data Scientists\nTitanic - Advanced Feature Engineering Tutorial\nExploratory Tutorial - Titanic\n\nДанное домашнее задание оценивается на 10 баллов, если оно сделано в срок. За каждый день опаздания в сдаче \\(-1\\) от исходной оценки."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Engineering practices in ML",
+    "section": "",
+    "text": "Сайт для курса “Инженерные практики в ML”."
   },
   {
     "objectID": "2.replication_crisis.html#в-чем-заключается-кризис",
