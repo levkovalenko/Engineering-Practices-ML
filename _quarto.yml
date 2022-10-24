@@ -17,21 +17,23 @@ website:
           - 2.replication_crisis.qmd
       - section: "Team work"
         contents:
-          - 2.project_template.qmd
-          - 3.git_workflow.qmd
+          - 3.team_work.qmd
+          - 4.git_workflow.qmd
       - section: "Software development"
-        contents: 
-          - 4.code_styles.qmd
-          - 5.testing.qmd
+        contents:
+          - 5.dependencies.qmd
+          - 6.code_styles.qmd
+          - 7.testing.qmd
       - section: "Documentation"
         contents:
-          - 6.generate_docs.qmd
-      - section: "Pipelines"
-        contents:
-          - 7.snakemake.qmd
+          - 8.generate_docs.qmd
       - section: "Data versioning"
         contents:
           - 9.dvc.qmd
+      - section: "Pipelines"
+        contents:
+          - 10.snakemake.qmd
+
 
 format:
   html:
