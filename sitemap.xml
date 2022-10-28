@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/4.git_workflow.html</loc>
-    <lastmod>2022-10-24T14:08:10.118Z</lastmod>
+    <lastmod>2022-10-28T16:58:00.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/levkovalenko/Engineering-Practices-ML/5.dependencies.html</loc>
+    <lastmod>2022-10-28T16:58:04.431Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/index.html</loc>
-    <lastmod>2022-10-24T14:08:11.218Z</lastmod>
+    <lastmod>2022-10-28T16:58:06.263Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/3.team_work.html</loc>
-    <lastmod>2022-10-24T14:08:15.386Z</lastmod>
+    <lastmod>2022-10-28T16:58:09.847Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/2.replication_crisis.html</loc>
-    <lastmod>2022-10-24T14:08:17.490Z</lastmod>
+    <lastmod>2022-10-28T16:58:12.436Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/1.entry.html</loc>
-    <lastmod>2022-10-24T14:08:19.414Z</lastmod>
+    <lastmod>2022-10-28T16:58:14.820Z</lastmod>
   </url>
 </urlset>
