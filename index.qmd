@@ -1,34 +1,36 @@
 ---
 title: "Engineering practices in ML"
 ---
-
+ 
 # Формальные моменты
-
+ 
+Для удобства коммуникаций предлагаю общаться в [telegramm](https://t.me/+Q0o6NKCzfBMyYTNi).
+ 
 ## Как получить зачет?
-
+ 
 $$0.4\cdot\text{ДЗ} + 0.4\cdot\text{ФП} + 0.2\cdot\text{Т}$$
-
+ 
 ДЗ - домашние задания.
-
+ 
 ФП - финальная презентация.
-
+ 
 Т - Теоретический вопрос.
-
+ 
 [Сводная таблица](https://docs.google.com/spreadsheets/d/19q918r42OZUjoH0GKmVDOaNjKuC5YHIygtasJkLpRcs/edit?usp=sharing) будет обновляться.
-
-
+ 
+ 
 ## Домашнее задание #1
-
-- Выбрать и опубликовать ML проект на GitHub. 
+ 
+- Выбрать и опубликовать ML проект на GitHub.
 - Перевести все jupyter notebook’и в скрипты (если это уже существующий проект, можете оставить jupyter notebook, но также создайте папку со скриптами).
-- Заполнить информацию о себе в [сводной таблице](https://docs.google.com/spreadsheets/d/19q918r42OZUjoH0GKmVDOaNjKuC5YHIygtasJkLpRcs/edit?usp=sharing) 
-
+- Заполнить информацию о себе в [сводной таблице](https://docs.google.com/spreadsheets/d/19q918r42OZUjoH0GKmVDOaNjKuC5YHIygtasJkLpRcs/edit?usp=sharing)
+ 
 Для тех, у кого нет своего проекта, советуем ознакомиться со следующими исследованиями, которые вы можете взять в качестве своего проекта, либо же составить свое исследование на их основе:
-
+ 
 - [A Statistical Analysis & ML workflow of Titanic](https://www.kaggle.com/code/masumrumi/a-statistical-analysis-ml-workflow-of-titanic/notebook)
 - [Titanic: A complete approach for Data Scientists](https://www.kaggle.com/code/pedrodematos/titanic-a-complete-approach-for-data-scientists/notebook)
 - [Titanic - Advanced Feature Engineering Tutorial](https://www.kaggle.com/code/gunesevitan/titanic-advanced-feature-engineering-tutorial/notebook)
 - [Exploratory Tutorial - Titanic](https://www.kaggle.com/code/arthurlu/exploratory-tutorial-titanic/notebook)
-
-
-Данное домашнее задание оценивается на 10 баллов, если оно сделано в срок. За каждый день опаздания в сдаче $-1$ от исходной оценки.
+ 
+ 
+Данное домашнее задание оценивается на 10 баллов, если оно сделано в срок. За каждый день опоздания в сдаче $-1$ от исходной оценки.
