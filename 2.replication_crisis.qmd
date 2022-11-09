@@ -2,7 +2,10 @@
 title: "Replication crisis"
 author: "Lev Kovalenko"
 format:
-    revealjs:
+    # revealjs:
+    #     theme: dark
+    #     self-contained: true
+    html:
         theme: dark
         self-contained: true
 ---
