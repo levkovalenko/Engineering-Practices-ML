@@ -4,8 +4,11 @@
 !*.qmd
 !*.yml
 !*.css
+!*.py
 !poetry.lock
 !pyproject.toml
 !/images/
 !/.github/
 !/.github/workflows/
+
+/.quarto/

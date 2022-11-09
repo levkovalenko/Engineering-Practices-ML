@@ -9,6 +9,7 @@ python = "3.10.5"
 jupyter = "^1.0.0"
 matplotlib = "^3.6.1"
 plotly = "^5.10.0"
+ipykernel = "^6.17.0"
 
 
 [tool.poetry.dev-dependencies]
