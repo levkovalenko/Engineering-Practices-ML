@@ -3,5 +3,7 @@
 !.gitignore
 !*.jpg
 !*.png
+!*.PNG
 !*.jpeg
 !*.gif
+!*.webp

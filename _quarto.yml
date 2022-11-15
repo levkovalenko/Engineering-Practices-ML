@@ -22,17 +22,18 @@ website:
       - section: "Software development"
         contents:
           - 5.dependencies.qmd
-          - 6.code_styles.qmd
-          - 7.testing.qmd
+          - 6.docker.qmd
+          - 7.code_styles.qmd
+          - 8.testing.qmd
       - section: "Documentation"
         contents:
-          - 8.generate_docs.qmd
+          - 9.generate_docs.qmd
       - section: "Data versioning"
         contents:
-          - 9.dvc.qmd
+          - 10.dvc.qmd
       - section: "Pipelines"
         contents:
-          - 10.snakemake.qmd
+          - 11.pipelines.qmd
 
 
 format:
