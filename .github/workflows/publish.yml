@@ -20,7 +20,7 @@ jobs:
           version: pre-release
 
       - name: Install Python and Dependencies
-        run: pip install poetry==1.1.13
+        run: pip install poetry==1.2.2
       - uses: actions/setup-python@v4
         with:
           python-version: '3.10.5'
