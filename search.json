@@ -214,7 +214,7 @@
     "href": "13.dvc_problems.html#python-problems",
     "title": "Any problems?",
     "section": "Python problems",
-    "text": "Python problems\nСоздадим два множества\n\na = {\"a\", \"b\", \"c\", \"d\"}\nb = {\"d\", \"a\", \"c\", \"b\"}\n\n\nPython считает их одинаковыми\n\na==b\n\nTrue\n\n\n\n\nА pickle - нет\n\nimport pickle\npickle.dumps(a)==pickle.dumps(b)\n\nTrue"
+    "text": "Python problems\nСоздадим два множества\n\na = {\"a\", \"b\", \"c\", \"d\"}\nb = {\"d\", \"a\", \"c\", \"b\"}\n\n\nPython считает их одинаковыми\n\na==b\n\nTrue\n\n\n\n\nА pickle - нет\n\nimport pickle\npickle.dumps(a)==pickle.dumps(b)\n\nFalse"
   },
   {
     "objectID": "13.dvc_problems.html#precision-representation",
@@ -249,14 +249,14 @@
     "href": "13.dvc_problems.html#sklearn-problems",
     "title": "Any problems?",
     "section": "Sklearn problems",
-    "text": "Sklearn problems\nСоздадим две модели и зафиксируем random state\n\nfrom sklearn.feature_extraction.text import TfidfVectorizer\nfrom sklearn.datasets import fetch_20newsgroups\n\ndata = fetch_20newsgroups()\n\nm1 = TfidfVectorizer(stop_words=[\"the\"]).fit([\"Hello world\", \"Hello, the\"])\nm2 = TfidfVectorizer(stop_words=[\"the\"]).fit([\"Hello world\", \"Hello, the\"])\n\nОни не равны\n\npickle.dumps(m1)==pickle.dumps(m2)\n\nFalse\n\n\nРазличия в них\n\nm1._stop_words_id, m2._stop_words_id\n\n(140573914826944, 140575128615680)"
+    "text": "Sklearn problems\nСоздадим две модели и зафиксируем random state\n\nfrom sklearn.feature_extraction.text import TfidfVectorizer\nfrom sklearn.datasets import fetch_20newsgroups\n\ndata = fetch_20newsgroups()\n\nm1 = TfidfVectorizer(stop_words=[\"the\"]).fit([\"Hello world\", \"Hello, the\"])\nm2 = TfidfVectorizer(stop_words=[\"the\"]).fit([\"Hello world\", \"Hello, the\"])\n\nОни не равны\n\npickle.dumps(m1)==pickle.dumps(m2)\n\nFalse\n\n\nРазличия в них\n\nm1._stop_words_id, m2._stop_words_id\n\n(140027416824640, 140028638247168)"
   },
   {
     "objectID": "13.dvc_problems.html#sklearn-problems-1",
     "href": "13.dvc_problems.html#sklearn-problems-1",
     "title": "Any problems?",
     "section": "Sklearn problems",
-    "text": "Sklearn problems\n\nfrom sklearn.cluster import KMeans\nimport numpy as np\nfrom utils import points\n\nfor l in range(10):\n    kmeans = KMeans(n_clusters=30, n_init=1, random_state=42)\n    kmeans.fit(points)\n\n    centroids = kmeans.cluster_centers_\n    print('{0:.20f}'.format(kmeans.inertia_))\n\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n\n\n1008436173.14048218727111816406\n1008436173.14048218727111816406"
+    "text": "Sklearn problems\n\nfrom sklearn.cluster import KMeans\nimport numpy as np\nfrom utils import points\n\nfor l in range(10):\n    kmeans = KMeans(n_clusters=30, n_init=1, random_state=42)\n    kmeans.fit(points)\n\n    centroids = kmeans.cluster_centers_\n    print('{0:.20f}'.format(kmeans.inertia_))\n\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n\n\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n1008436173.14048218727111816406\n1008436173.14048218727111816406"
   },
   {
     "objectID": "13.dvc_problems.html#library-problems",
@@ -662,7 +662,7 @@
     "href": "7.code_styles.html#ast-visit-functions",
     "title": "CodeStyle",
     "section": "AST visit functions",
-    "text": "AST visit functions\n\nimport ast\n\ncode = \"one_plus_two = 1 + 2\"\ntree = ast.parse(code)\nfor node in ast.walk(tree):\n        print(node.__class__.__name__)\n\nModule\nAssign\nName\nBinOp\nStore\nConstant\nAdd\nConstant\n\n\n\nfor name, value in ast.iter_fields(tree):\n        print(name, value)\n\nbody [<ast.Assign object at 0x7fd3473dce20>]\ntype_ignores []\n\n\n\nfor node in ast.iter_child_nodes(tree):\n        print(node.__class__.__name__)\n\nAssign\n\n\n\nДавайте рассмотрим функции для итерирования по дереву. Например функция walk позволяет совершать обход в глубину ast. А функции iter_fields, iter_child_nodes просмотреть поля ноды или просмотреть ее потомков, они не рекурсивны и применяются только к одному узлу дерева.\nС помощью них можно анализировать ast дерево, но это не очень удобно, поэтому предлагаю взглянуть на NodeVisitor."
+    "text": "AST visit functions\n\nimport ast\n\ncode = \"one_plus_two = 1 + 2\"\ntree = ast.parse(code)\nfor node in ast.walk(tree):\n        print(node.__class__.__name__)\n\nModule\nAssign\nName\nBinOp\nStore\nConstant\nAdd\nConstant\n\n\n\nfor name, value in ast.iter_fields(tree):\n        print(name, value)\n\nbody [<ast.Assign object at 0x7f57859c4790>]\ntype_ignores []\n\n\n\nfor node in ast.iter_child_nodes(tree):\n        print(node.__class__.__name__)\n\nAssign\n\n\n\nДавайте рассмотрим функции для итерирования по дереву. Например функция walk позволяет совершать обход в глубину ast. А функции iter_fields, iter_child_nodes просмотреть поля ноды или просмотреть ее потомков, они не рекурсивны и применяются только к одному узлу дерева.\nС помощью них можно анализировать ast дерево, но это не очень удобно, поэтому предлагаю взглянуть на NodeVisitor."
   },
   {
     "objectID": "7.code_styles.html#nodevisitor",
