@@ -25,15 +25,19 @@ website:
           - 6.docker.qmd
           - 7.code_styles.qmd
           - 8.testing.qmd
-      - section: "Documentation"
-        contents:
-          - 9.generate_docs.qmd
       - section: "Data versioning"
         contents:
-          - 10.dvc.qmd
+          - 9.data_version.qmd
+          - 10.git_lfs.qmd
+          - 11.neptune.qmd
+          - 12.dvc.qmd
+          - 13.dvc_problems.qmd
+      - section: "Documentation"
+        contents:
+          - 14.generate_docs.qmd
       - section: "Pipelines"
         contents:
-          - 11.pipelines.qmd
+          - 15.pipelines.qmd
 
 
 format:

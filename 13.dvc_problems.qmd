@@ -1,0 +1,174 @@
+---
+title: "Any problems?"
+author: "Lev Kovalenko"
+format: 
+    revealjs: 
+        theme: dark
+        self-contained: true
+        echo: true
+        source: true
+jupyter: "epml"
+---
+
+## Python problems
+
+Создадим два множества
+```{python}
+a = {"a", "b", "c", "d"}
+b = {"d", "a", "c", "b"}
+```
+
+. . .
+
+Python считает их одинаковыми
+```{python}
+a==b
+```
+
+. . .
+
+А pickle - нет
+```{python}
+import pickle
+pickle.dumps(a)==pickle.dumps(b)
+```
+
+## Precision representation
+
+Представление $\frac{1}{10}$
+```{python}
+format(0.1, ".17g")
+```
+
+```{python}
+(0.1).as_integer_ratio()
+```
+
+. . .
+
+Представление $\frac{2}{10}$
+```{python}
+format(0.2, ".17g")
+```
+```{python}
+(0.2).as_integer_ratio()
+```
+
+. . .
+
+Представление $\frac{3}{10}$
+```{python}
+format(0.3, ".17g")
+```
+```{python}
+(0.3).as_integer_ratio()
+```
+
+## [Numpy](https://numpy.org/doc/stable/user/basics.types.html#array-types-and-conversions-between-types){preview-link="true"} precision problems
+
+- Разная точность на 32 битных и 64 битных системах
+- Разная точность на windows и других системах
+- Разные стандартные типы в [windows](https://learn.microsoft.com/en-us/cpp/c-language/storage-of-basic-types?redirectedfrom=MSDN&view=msvc-170){preview-link="true"} и других системах
+
+:::: {.columns}
+ 
+::: {.column width="50%"}
+![](images/win-numpy.PNG){fig-align="center" height="300px"}
+ 
+:::
+ 
+::: {.column width="50%"}
+![](images/lin-numpy.PNG){fig-align="center" height="300px"}
+:::
+::::
+
+## В чем проблема то?
+:::: {.columns}
+ 
+::: {.column width="50%"}
+На windows у нас тип переполняется
+![](images/win-overload.PNG){fig-align="center" height="250px"}
+ 
+:::
+ 
+::: {.column width="50%"}
+На linux стандартный тип не переполняется
+![](images/lin-overload.PNG){fig-align="center" height="250px"}
+:::
+::::
+
+## Plotly problems
+Создадим два графика
+```{python}
+import plotly.graph_objects as go
+
+fig1 = go.Figure(go.Scatter(x=[1,2,3], y=[3,2,1]))
+fig2 = go.Figure(go.Scatter(x=[1,2,3], y=[3,2,1]))
+```
+
+Python считает их одинаковыми
+```{python}
+fig1==fig2
+```
+
+Но при сохранении в html - разные
+```{python}
+fig1.to_html()==fig2.to_html()
+```
+Hot fix
+```{python}
+fig1.to_html(div_id="same")==fig2.to_html(div_id="same")
+```
+
+## Sklearn problems
+Создадим две модели и зафиксируем random state
+```{python}
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.datasets import fetch_20newsgroups
+
+data = fetch_20newsgroups()
+
+m1 = TfidfVectorizer(stop_words=["the"]).fit(["Hello world", "Hello, the"])
+m2 = TfidfVectorizer(stop_words=["the"]).fit(["Hello world", "Hello, the"])
+```
+
+Они не равны
+```{python}
+pickle.dumps(m1)==pickle.dumps(m2)
+```
+Различия в них
+```{python}
+m1._stop_words_id, m2._stop_words_id
+```
+
+## Sklearn problems
+
+```{python}
+from sklearn.cluster import KMeans
+import numpy as np
+from utils import points
+
+for l in range(10):
+    kmeans = KMeans(n_clusters=30, n_init=1, random_state=42)
+    kmeans.fit(points)
+
+    centroids = kmeans.cluster_centers_
+    print('{0:.20f}'.format(kmeans.inertia_))
+```
+
+## Library problems {.scrollable}
+
+- [Logistic Regression](https://github.com/scikit-learn/scikit-learn/issues/24615){preview-link="true"}
+- [Random Forest](https://github.com/scikit-learn/scikit-learn/issues/7366){preview-link="true"}
+- [TF-IDF](https://github.com/scikit-learn/scikit-learn/issues/18669){preview-link="true"}
+- [Agglomerative Clustering](https://github.com/scikit-learn/scikit-learn/issues/16920){preview-link="true"}
+- [t-SNE](https://github.com/scikit-learn/scikit-learn/issues/16986){preview-link="true"}
+- [Umap](https://umap-learn.readthedocs.io/en/latest/reproducibility.html){preview-link="true"}
+- [All algorithms](https://github.com/scikit-learn/scikit-learn/issues/7139){preview-link="true"}
+
+## DL frameworks
+
+- [pytorch](https://pytorch.org/docs/stable/notes/randomness.html){preview-link="true"}
+- [tensorflow](https://www.tensorflow.org/versions/r2.8/api_docs/python/tf/config/experimental/enable_op_determinism){preview-link="true"}
+- [jax](https://github.com/google/jax/discussions/10674)
+
