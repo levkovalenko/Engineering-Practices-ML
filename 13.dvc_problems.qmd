@@ -33,7 +33,7 @@ import pickle
 pickle.dumps(a)==pickle.dumps(b)
 ```
 
-## Precision representation
+## Precision representation {.scrollable}
 
 Представление $\frac{1}{10}$
 ```{python}
@@ -97,7 +97,7 @@ format(0.3, ".17g")
 :::
 ::::
 
-## Plotly problems
+## Plotly problems {.scrollable}
 Создадим два графика
 ```{python}
 import plotly.graph_objects as go
