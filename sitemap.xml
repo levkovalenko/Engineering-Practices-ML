@@ -2,54 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/12.dvc.html</loc>
-    <lastmod>2022-11-30T15:10:09.686Z</lastmod>
+    <lastmod>2022-12-07T15:07:52.155Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/levkovalenko/Engineering-Practices-ML/17.snakemake.html</loc>
+    <lastmod>2022-12-07T15:07:55.427Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/levkovalenko/Engineering-Practices-ML/19.airflow.html</loc>
+    <lastmod>2022-12-07T15:07:57.495Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/1.entry.html</loc>
-    <lastmod>2022-11-30T15:10:12.626Z</lastmod>
+    <lastmod>2022-12-07T15:08:00.867Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/11.neptune.html</loc>
-    <lastmod>2022-11-30T15:10:19.494Z</lastmod>
+    <lastmod>2022-12-07T15:08:07.151Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/4.git_workflow.html</loc>
-    <lastmod>2022-11-30T15:10:21.598Z</lastmod>
+    <lastmod>2022-12-07T15:08:09.587Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/13.dvc_problems.html</loc>
-    <lastmod>2022-11-30T15:10:36.110Z</lastmod>
+    <lastmod>2022-12-07T15:08:24.459Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/5.dependencies.html</loc>
-    <lastmod>2022-11-30T15:10:39.134Z</lastmod>
+    <lastmod>2022-12-07T15:08:27.115Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/levkovalenko/Engineering-Practices-ML/16.make.html</loc>
+    <lastmod>2022-12-07T15:08:29.419Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/2.replication_crisis.html</loc>
-    <lastmod>2022-11-30T15:10:41.306Z</lastmod>
+    <lastmod>2022-12-07T15:08:31.935Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/levkovalenko/Engineering-Practices-ML/14.templtes.html</loc>
+    <lastmod>2022-12-07T15:08:38.631Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/index.html</loc>
-    <lastmod>2022-11-30T15:10:41.718Z</lastmod>
+    <lastmod>2022-12-07T15:08:39.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/levkovalenko/Engineering-Practices-ML/15.workflow_manager.html</loc>
+    <lastmod>2022-12-07T15:08:44.083Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/6.docker.html</loc>
-    <lastmod>2022-11-30T15:10:44.326Z</lastmod>
+    <lastmod>2022-12-07T15:08:46.523Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/9.data_version.html</loc>
-    <lastmod>2022-11-30T15:10:50.235Z</lastmod>
+    <lastmod>2022-12-07T15:08:51.663Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/10.git_lfs.html</loc>
-    <lastmod>2022-11-30T15:10:56.235Z</lastmod>
+    <lastmod>2022-12-07T15:08:56.831Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/7.code_styles.html</loc>
-    <lastmod>2022-11-30T15:11:03.123Z</lastmod>
+    <lastmod>2022-12-07T15:09:02.895Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/levkovalenko/Engineering-Practices-ML/3.team_work.html</loc>
-    <lastmod>2022-11-30T15:11:06.395Z</lastmod>
+    <lastmod>2022-12-07T15:09:06.367Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/levkovalenko/Engineering-Practices-ML/18.dvc.html</loc>
+    <lastmod>2022-12-07T15:09:08.687Z</lastmod>
   </url>
 </urlset>
