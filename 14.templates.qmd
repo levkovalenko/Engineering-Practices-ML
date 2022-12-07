@@ -63,7 +63,7 @@ stateDiagram-v2
 Отсюда и появляется вопрос - как это все организовать?
 :::
 
-## [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/){.scrollable}
+## [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/) {.scrollable}
 
 . . .
 
