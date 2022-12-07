@@ -1,0 +1,105 @@
+---
+title: "Make"
+author: "Lev Kovalenko"
+format: 
+    revealjs: 
+        theme: dark
+        self-contained: true
+        echo: true
+        source: true
+---
+
+## Makefile
+
+> `Из чего делаем? (реквизиты) ---> Как делаем? (команды) ---> Что делаем? (цели)`
+
+```make
+<цели>: <реквизиты>
+	<команда #1>
+	...
+	<команда #n>
+```
+
+:::{.notes}
+make — утилита, автоматизирующая процесс преобразования файлов из одной формы в другую. Чаще всего это компиляция исходного кода в объектные файлы и последующая компоновка в исполняемые файлы или библиотеки.
+
+Утилита использует специальные make-файлы, в которых указаны зависимости файлов друг от друга и правила для их удовлетворения. На основе информации о времени последнего изменения каждого файла make определяет и запускает необходимые программы.
+
+Сам скрипт состоит из набора правил, которые в свою очередь описываются:
+
+1) целями (то, что данное правило делает);
+2) реквизитами (то, что необходимо для выполнения правила и получения целей);
+3) командами (выполняющими данные преобразования).
+:::
+
+## Примеры {.scrollable}
+
+Virtual Environment Management
+```make
+create_env:
+	python3.10 -m venv .venv
+
+activate_env: create_env
+	activate ./.venv/bin/activate
+```
+
+Dependency Management
+```make
+update_deps:
+	@poetry update
+
+deps_install_no_dev: update_deps
+	@poetry install --no-dev
+
+deps_install: update_deps
+	@poetry install
+
+deps_export: update_deps
+	@poetry export --without-hashes --output requirements.txt
+```
+
+Code Quality
+```make
+check_flake8:
+	@poetry run flake8 ./fundom --count --show-source --statistics
+
+check_isort:
+	@poetry run isort **/*.py --check-only
+
+test:
+	@poetry run pytest
+
+check: check_flake8 check_isort test
+	@echo "All checks are finished!"
+
+setup_pre_commit:
+	@pre-commit install
+```
+
+
+## Pros&Cons {.scrollable}
+
+:::: {.columns }
+ 
+::: {.column width="50%" }
+**Pros**
+ 
+- Не зависит от языка
+- DAG на основе файлов
+- Правила рядом с кодом
+- Паралельное выполнение
+ 
+:::
+ 
+::: {.column width="50%"}
+**Cons**
+ 
+- Не тривиальный синтаксис
+- Сложное разбиение на модули
+- Ручная параметризация
+- Нет виртуальных окружений
+- Нет ограничений на ресурсы
+- Нет распределенных вычеслений
+ 
+:::
+::::

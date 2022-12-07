@@ -32,12 +32,17 @@ website:
           - 11.neptune.qmd
           - 12.dvc.qmd
           - 13.dvc_problems.qmd
+      - section: "Pipelines"
+        contents:
+          - 14.templates.qmd
+          - 15.workflow_manager.qmd
+          - 16.make.qmd
+          - 17.snakemake.qmd
+          - 18.dvc.qmd
+          - 19.airflow.qmd
       - section: "Documentation"
         contents:
           - 14.generate_docs.qmd
-      - section: "Pipelines"
-        contents:
-          - 15.pipelines.qmd
 
 
 format:

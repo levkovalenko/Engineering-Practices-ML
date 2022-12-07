@@ -1,0 +1,181 @@
+---
+title: "Snakemake"
+author: "Lev Kovalenko"
+format: 
+    revealjs: 
+        theme: dark
+        self-contained: true
+        echo: true
+        source: true
+---
+
+## 
+
+![](images/snakemake.png)
+
+:::{.notes}
+Система управления рабочим процессом Snakemake — это инструмент для создания воспроизводимых и масштабируемых задач анализа данных. Workflow описываются с помощью DSL языка на основе Python. Их можно легко масштабировать для серверов, кластеров, сетевых и облачных сред без необходимости изменять определение рабочего процесса. Наконец, рабочие процессы Snakemake могут включать в себя описание необходимого программного обеспечения, которое будет автоматически развернуто в любой среде выполнения.
+
+Snakemake следует парадигме GNU Make: рworkflow определяются с точки зрения правил, которые определяют, как создавать выходные файлы из входных файлов. Зависимости между правилами определяются автоматически, создавая DAG заданий, которые можно автоматически распараллеливать.
+:::
+
+## Syntax {.scrollable}
+
+Snakemake rule
+```python
+rule bwa_map:
+    input:
+        "data/genome.fa",
+        "data/samples/A.fastq"
+    output:
+        "mapped_reads/A.bam"
+    shell:
+        "bwa mem {input} | samtools view -Sb - > {output}"
+```
+Start snakemake
+```sh
+snakemake -np mapped_reads/A.bam
+```
+:::{.notes}
+Snakemake отличается от других текстовых систем рабочего процесса следующим образом. Подключаясь к интерпретатору Python, Snakemake предлагает язык определения, который является расширением Python .с синтаксисом для определения правил и конкретных свойств рабочего процесса. Это позволяет Snakemake сочетать гибкость простого языка сценариев с определением рабочего процесса на основе Python. 
+:::
+
+## Wildcards {.scrollable}
+
+Snakemake rule
+```python
+rule bwa_map:
+    input:
+        "data/genome.fa",
+        "data/samples/{sample}.fastq"
+    output:
+        "mapped_reads/{sample}.bam"
+    shell:
+        "bwa mem {input} | samtools view -Sb - > {output}"
+```
+Start snakemake
+```sh
+snakemake -np mapped_reads/B.bam
+```
+
+:::{.notes}
+алгоритм планирования Snakemake может быть ограничен приоритетами, предоставленными ядрами и настраиваемыми ресурсами, а также обеспечивает общую поддержку распределенных вычислений (например, кластерных или пакетных систем). Следовательно, рабочий процесс Snakemake масштабируется без изменений от одноядерных рабочих станций и многоядерных серверов до кластерных или пакетных систем.
+:::
+
+## Configuration {.scrollable}
+Snakemake rule
+```python
+configfile: "config.yaml"
+
+rule bcftools_call:
+    input:
+        fa="data/genome.fa",
+        bam=expand("sorted_reads/{sample}.bam", sample=config["samples"]),
+        bai=expand("sorted_reads/{sample}.bam.bai", sample=config["samples"])
+    output:
+        "calls/all.vcf"
+    shell:
+        "bcftools mpileup -f {input.fa} {input.bam} | "
+        "bcftools call -mv - > {output}"
+```
+
+config.yaml
+```yml
+samples:
+    A: data/samples/A.fastq
+    B: data/samples/B.fastq
+```
+
+Start snakemake
+```sh
+snakemake -np bcftools_call
+```
+
+## Additional features{.scrollable}
+Benchmark
+```python
+rule bwa_map:
+    input:
+        "data/genome.fa",
+        lambda wildcards: config["samples"][wildcards.sample]
+    output:
+        temp("mapped_reads/{sample}.bam")
+    params:
+        rg="@RG\tID:{sample}\tSM:{sample}"
+    log:
+        "logs/bwa_mem/{sample}.log"
+    benchmark:
+        "benchmarks/{sample}.bwa.benchmark.txt"
+    threads: 8
+    shell:
+        "(bwa mem -R '{params.rg}' -t {threads} {input} | "
+        "samtools view -Sb - > {output}) 2> {log}"
+```
+
+. . .
+
+Modules
+
+```python
+include: "path/to/other.snakefile"
+include: "path/to/other.smk"
+```
+
+. . .
+
+Conda enviroments
+
+```python
+rule samtools_index:
+  input:
+      "sorted_reads/{sample}.bam"
+  output:
+      "sorted_reads/{sample}.bam.bai"
+  conda:
+      "envs/samtools.yaml"
+  shell:
+      "samtools index {input}"
+```
+
+
+## Clusters
+
+- Кластера
+- Kubernetes
+- Google cloud
+- AWS
+
+:::{.notes}
+По умолчанию Snakemake выполняет задания на локальном компьютере, на котором он запущен. Кроме того, он может выполнять задания в распределенных средах, например, в вычислительных кластерах или пакетных системах . Если узлы используют общую файловую систему, Snakemake поддерживает три альтернативных режима выполнения. так же он может работать с данными из s3 хранилища.
+Кроме класетров, есть поддержка kubernetess и некоторых облаков. Snakemake может выполнять задачи на них.
+:::
+
+
+## Pros&Cons {.scrollable}
+
+:::: {.columns }
+ 
+::: {.column width="50%" }
+**Pros**
+ 
+- Не зависит от языка
+- DAG на основе файлов
+- Правила рядом с кодом
+- Распределенное выполнение
+- Есть работа с ограничениями
+- Python like синтаксис
+- Интегрирован с conda и docker
+- Модульность
+- Параметризация на основе wildcards
+ 
+:::
+ 
+::: {.column width="50%"}
+**Cons**
+ 
+- Сложно осознать некоторые моменты
+- Ограничение по ресурсам фиктивно
+- Не централизованные распределенные вычесления
+ 
+:::
+::::
