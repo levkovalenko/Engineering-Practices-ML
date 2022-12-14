@@ -42,7 +42,7 @@ website:
           - 19.airflow.qmd
       - section: "Documentation"
         contents:
-          - 14.generate_docs.qmd
+          - 20.docs.qmd
 
 
 format:
