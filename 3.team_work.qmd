@@ -2,12 +2,12 @@
 title: "Team work"
 author: "Lev Kovalenko"
 format:
-    # revealjs:
-    #     theme: dark
-    #     self-contained: true
-    html:
+    revealjs:
         theme: dark
         self-contained: true
+    # html:
+    #     theme: dark
+    #     self-contained: true
 ---
  
 # Какие общие артефакты есть у команды исследователей?
