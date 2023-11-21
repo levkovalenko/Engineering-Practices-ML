@@ -1222,13 +1222,13 @@ Lev Kovalenko
 <section id="python-problems" class="slide level2">
 <h2>Python problems</h2>
 <p>Создадим два множества</p>
-<div id="8e249138" class="cell" data-execution_count="1">
+<div id="af4d8e27" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>a <span class="op">=</span> {<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>}</span>
 <span id="cb1-2"><a href="#cb1-2"></a>b <span class="op">=</span> {<span class="st">&quot;d&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;b&quot;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>Python считает их одинаковыми</p>
-<div id="434e3efc" class="cell" data-execution_count="2">
+<div id="3f1812ae" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>a<span class="op">==</span>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>True</code></pre>
@@ -1237,11 +1237,11 @@ Lev Kovalenko
 </div>
 <div class="fragment">
 <p>А pickle - нет</p>
-<div id="0e30f77d" class="cell" data-execution_count="3">
+<div id="edb27696" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> pickle</span>
 <span id="cb4-2"><a href="#cb4-2"></a>pickle.dumps(a)<span class="op">==</span>pickle.dumps(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>False</code></pre>
+<pre><code>True</code></pre>
 </div>
 </div>
 </div>
@@ -1249,13 +1249,13 @@ Lev Kovalenko
 <section id="precision-representation" class="slide level2 scrollable">
 <h2>Precision representation</h2>
 <p>Представление <span class="math inline">\(\frac{1}{10}\)</span></p>
-<div id="dd7453fe" class="cell" data-execution_count="4">
+<div id="b708f5b7" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="bu">format</span>(<span class="fl">0.1</span>, <span class="st">&quot;.17g&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>&#39;0.10000000000000001&#39;</code></pre>
 </div>
 </div>
-<div id="9b7bbdc5" class="cell" data-execution_count="5">
+<div id="32d8f19e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>(<span class="fl">0.1</span>).as_integer_ratio()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>(3602879701896397, 36028797018963968)</code></pre>
@@ -1263,13 +1263,13 @@ Lev Kovalenko
 </div>
 <div class="fragment">
 <p>Представление <span class="math inline">\(\frac{2}{10}\)</span></p>
-<div id="de64b1d3" class="cell" data-execution_count="6">
+<div id="d58bf340" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="bu">format</span>(<span class="fl">0.2</span>, <span class="st">&quot;.17g&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>&#39;0.20000000000000001&#39;</code></pre>
 </div>
 </div>
-<div id="13151b1b" class="cell" data-execution_count="7">
+<div id="be7ea332" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>(<span class="fl">0.2</span>).as_integer_ratio()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>(3602879701896397, 18014398509481984)</code></pre>
@@ -1278,13 +1278,13 @@ Lev Kovalenko
 </div>
 <div class="fragment">
 <p>Представление <span class="math inline">\(\frac{3}{10}\)</span></p>
-<div id="94db11ee" class="cell" data-execution_count="8">
+<div id="984e482b" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="bu">format</span>(<span class="fl">0.3</span>, <span class="st">&quot;.17g&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>&#39;0.29999999999999999&#39;</code></pre>
 </div>
 </div>
-<div id="0950e3e8" class="cell" data-execution_count="9">
+<div id="47ce14af" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>(<span class="fl">0.3</span>).as_integer_ratio()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>(5404319552844595, 18014398509481984)</code></pre>
@@ -1328,28 +1328,28 @@ Lev Kovalenko
 <section id="plotly-problems" class="slide level2 scrollable">
 <h2>Plotly problems</h2>
 <p>Создадим два графика</p>
-<div id="efec84f2" class="cell" data-execution_count="10">
+<div id="0b9f6879" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
 <span id="cb18-2"><a href="#cb18-2"></a></span>
 <span id="cb18-3"><a href="#cb18-3"></a>fig1 <span class="op">=</span> go.Figure(go.Scatter(x<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>], y<span class="op">=</span>[<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>]))</span>
 <span id="cb18-4"><a href="#cb18-4"></a>fig2 <span class="op">=</span> go.Figure(go.Scatter(x<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>], y<span class="op">=</span>[<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Python считает их одинаковыми</p>
-<div id="46fffe20" class="cell" data-execution_count="11">
+<div id="b3ce10d4" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>fig1<span class="op">==</span>fig2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p>Но при сохранении в html - разные</p>
-<div id="d68516f6" class="cell" data-execution_count="12">
+<div id="64260e41" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>fig1.to_html()<span class="op">==</span>fig2.to_html()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>False</code></pre>
 </div>
 </div>
 <p>Hot fix</p>
-<div id="75916c44" class="cell" data-execution_count="13">
+<div id="8aab8e5f" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>fig1.to_html(div_id<span class="op">=</span><span class="st">&quot;same&quot;</span>)<span class="op">==</span>fig2.to_html(div_id<span class="op">=</span><span class="st">&quot;same&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>True</code></pre>
@@ -1359,7 +1359,7 @@ Lev Kovalenko
 <section id="sklearn-problems" class="slide level2">
 <h2>Sklearn problems</h2>
 <p>Создадим две модели и зафиксируем random state</p>
-<div id="b07572cd" class="cell" data-execution_count="14">
+<div id="7a1873ce" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> TfidfVectorizer</span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_20newsgroups</span>
 <span id="cb25-3"><a href="#cb25-3"></a></span>
@@ -1369,23 +1369,23 @@ Lev Kovalenko
 <span id="cb25-7"><a href="#cb25-7"></a>m2 <span class="op">=</span> TfidfVectorizer(stop_words<span class="op">=</span>[<span class="st">&quot;the&quot;</span>]).fit([<span class="st">&quot;Hello world&quot;</span>, <span class="st">&quot;Hello, the&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Они не равны</p>
-<div id="dc26e307" class="cell" data-execution_count="15">
+<div id="2da4012f" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>pickle.dumps(m1)<span class="op">==</span>pickle.dumps(m2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>False</code></pre>
 </div>
 </div>
 <p>Различия в них</p>
-<div id="c12e62e7" class="cell" data-execution_count="16">
+<div id="da7d9ba6" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>m1._stop_words_id, m2._stop_words_id</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
-<pre><code>(139712493345984, 139713870832768)</code></pre>
+<pre><code>(139695101926400, 139696512877120)</code></pre>
 </div>
 </div>
 </section>
 <section id="sklearn-problems-1" class="slide level2">
 <h2>Sklearn problems</h2>
-<div id="7f743163" class="cell" data-execution_count="17">
+<div id="93e8d809" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
 <span id="cb30-2"><a href="#cb30-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb30-3"><a href="#cb30-3"></a><span class="im">from</span> utils <span class="im">import</span> points</span>
@@ -1397,16 +1397,16 @@ Lev Kovalenko
 <span id="cb30-9"><a href="#cb30-9"></a>    centroids <span class="op">=</span> kmeans.cluster_centers_</span>
 <span id="cb30-10"><a href="#cb30-10"></a>    <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">{0:.20f}</span><span class="st">&#39;</span>.<span class="bu">format</span>(kmeans.inertia_))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>1008436173.14048075675964355469
+<pre><code>1008436173.14048099517822265625
 1008436173.14048087596893310547
-1008436173.14048075675964355469
 1008436173.14048087596893310547
 1008436173.14048087596893310547
 1008436173.14048099517822265625
-1008436173.14048075675964355469
-1008436173.14048075675964355469
+1008436173.14048087596893310547
 1008436173.14048099517822265625
-1008436173.14048075675964355469</code></pre>
+1008436173.14048087596893310547
+1008436173.14048075675964355469
+1008436173.14048087596893310547</code></pre>
 </div>
 </div>
 </section>
