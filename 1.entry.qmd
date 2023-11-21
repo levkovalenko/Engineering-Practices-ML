@@ -2,12 +2,12 @@
 title: "Engineering practices in ML"
 author: "Lev Kovalenko"
 format:
-    # revealjs:
-    #     theme: dark
-    #     self-contained: true
-    html:
+    revealjs:
         theme: dark
         self-contained: true
+    # html:
+    #    theme: dark
+    #    self-contained: true
 ---
  
 ## Зачем этот курс?
