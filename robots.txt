@@ -1,1 +1,1 @@
-Sitemap: https://github.com/levkovalenko/Engineering-Practices-ML/sitemap.xml
+Sitemap: https://levkovalenko.github.io/Engineering-Practices-ML/sitemap.xml
